@@ -14,3 +14,42 @@ This is the first post in a Quarto blog. And since I do not know how to setup my
 Starting from [here](https://quarto.org/docs/publishing/github-pages.html "https://quarto.org/docs/publishing/github-pages.html"), I decide to take route number 3 (Use a [GitHub Action](https://quarto.org/docs/publishing/github-pages.html#github-action) to automatically render your files).
 
 As recommended, I add the `/_site/` directory to my `.gitignore` file.
+
+Then, in order to keep code only executing locally, freeze the computation
+
+```{.yaml filename="_quarto.yml"}
+execute:
+  freeze: auto
+```
+
+Next, I create a file named `publish.yml`
+
+```{.yaml filename=".github/workflows/publish.yml"}
+on:
+  workflow_dispatch:
+  push:
+    branches: main
+
+name: Quarto Publish
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Render and Publish
+        uses: quarto-dev/quarto-actions/publish@v2
+        with:
+          target: gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+```
+
+Now, I check everything into my git repository and push to github. gh-pages should be initialized and I am ready to go.
