@@ -65,3 +65,5 @@ credentials::set_github_pat("<my-gh-PAT>")
 ```
 
 If you don't have a PAT, follow the instructions in the link above. To store the token permanently, use the .Renviron file of your project. `r usethis::edit_r_environ(scope = "project")`
+
+It is really easy! But I don't know why, I had to create the branch `gh-pages` on the remote manually to make the build-job work. Before github actions were failing with a error hinting to a missing `_publish.yml`. [Here](https://github.com/quarto-dev/quarto-cli/issues/3147 "https://github.com/quarto-dev/quarto-cli/issues/3147") I found out about the missing branch.
