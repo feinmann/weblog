@@ -263,6 +263,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>credentials<span class="sc">::</span><span class="fu">set_github_pat</span>(<span class="st">"&lt;my-gh-PAT&gt;"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>If you don’t have a PAT, follow the instructions in the link above. To store the token permanently, use the .Renviron file of your project.</p>
+<p>It is really easy! But I don’t know why, I had to create the branch <code>gh-pages</code> on the remote manually to make the build-job work. Before github actions were failing with a error hinting to a missing <code>_publish.yml</code>. <a href="https://github.com/quarto-dev/quarto-cli/issues/3147" title="https://github.com/quarto-dev/quarto-cli/issues/3147">Here</a> I found out about the missing branch.</p>
 
 
 
