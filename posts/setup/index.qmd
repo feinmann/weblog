@@ -17,14 +17,14 @@ As recommended, I add the `/_site/` directory to my `.gitignore` file.
 
 Then, in order to keep code only executing locally, freeze the computation
 
-```{.yaml filename="_quarto.yml"}
+``` {.yaml filename="_quarto.yml"}
 execute:
   freeze: auto
 ```
 
 Next, I create a file named `publish.yml`
 
-```{.yaml filename=".github/workflows/publish.yml"}
+``` {.yaml filename=".github/workflows/publish.yml"}
 on:
   workflow_dispatch:
   push:
@@ -53,3 +53,15 @@ jobs:
 ```
 
 Now, I check everything into my git repository and push to github. gh-pages should be initialized and I am ready to go.
+
+As described [here](https://gist.github.com/Z3tt/3dab3535007acf108391649766409421 "https://gist.github.com/Z3tt/3dab3535007acf108391649766409421") I use `{usethis}` to initialize my github credentials, so first I have to install the package:
+
+```{r}
+install.packages("usethis")
+```
+
+```{r}
+credentials::set_github_pat("<my-gh-PAT>")
+```
+
+If you don't have a PAT, follow the instructions in the link above. To store the token permanently, use the .Renviron file of your project. `r usethis::edit_r_environ(scope = "project")`
