@@ -1,0 +1,15 @@
+---
+title: "About"
+image: profile.jpg
+about:
+  template: jolla
+  links:
+    - icon: mastodon
+      text: Mastodon
+      href: https://fosstodon.org
+    - icon: github
+      text: Github
+      href: https://github.com
+---
+
+Image above: "A logo for my blog profile." prompt on [stablediffusionweb](https://stablediffusionweb.com/#demo "https://stablediffusionweb.com/#demo")

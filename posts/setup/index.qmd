@@ -1,0 +1,16 @@
+---
+title: "How to setup a Quarto blog with gh-pages"
+author: "matthias berger"
+date: "2023-01-29"
+categories: [howto]
+---
+
+![](images/image-193588858.png){fig-alt="\"Starting a Quarto blog\" prompt on https://stablediffusionweb.com/#demo"}
+
+This is the first post in a Quarto blog. And since I do not know how to setup my gh-pages with it, I just write about how I found out.
+
+#TODO (using RStudio Quarto Blog template)
+
+Starting from [here](https://quarto.org/docs/publishing/github-pages.html "https://quarto.org/docs/publishing/github-pages.html"), I decide to take route number 3 (Use a [GitHub Action](https://quarto.org/docs/publishing/github-pages.html#github-action) to automatically render your files).
+
+As recommended, I add the `/_site/` directory to my `.gitignore` file.
