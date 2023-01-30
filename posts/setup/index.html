@@ -7,7 +7,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="matthias berger">
-<meta name="dcterms.date" content="2023-01-29">
 
 <title>weblog - How to setup a Quarto blog with gh-pages</title>
 <style>
@@ -185,13 +184,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             </div>
     </div>
       
+    
       <div>
-      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-heading">Modified</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">January 29, 2023</p>
+        <p class="date-modified">January 30, 2023</p>
       </div>
     </div>
-    
       
     </div>
     
@@ -208,7 +207,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <p><img src="images/image-193588858.png" class="img-fluid" alt="&quot;Starting a Quarto blog&quot; prompt on https://stablediffusionweb.com/#demo"></p>
 <p>This is the first post in a Quarto blog. And since I do not know how to setup my gh-pages with it, I just write about how I found out.</p>
-<p>#TODO (using RStudio Quarto Blog template)</p>
+<section id="setup-a-quarto-blog-template" class="level2">
+<h2 class="anchored" data-anchor-id="setup-a-quarto-blog-template">Setup a Quarto Blog template</h2>
+<p>First things first. I am using RStudio’s “Create Project”-dialog to use the “Quarto Blog” template. Let the screenshots speak for themselves:</p>
+<table class="table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><img src="images/Bildschirmfoto vom 2023-01-30 21-02-08.png" class="img-fluid" width="640"></td>
+<td><img src="images/Bildschirmfoto vom 2023-01-30 21-03-02.png" class="img-fluid" width="640"></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="deploying-using-github-actions" class="level2">
+<h2 class="anchored" data-anchor-id="deploying-using-github-actions">Deploying using GitHub Actions</h2>
 <p>Starting from <a href="https://quarto.org/docs/publishing/github-pages.html" title="https://quarto.org/docs/publishing/github-pages.html">here</a>, I decide to take route number 3 (Use a <a href="https://quarto.org/docs/publishing/github-pages.html#github-action">GitHub Action</a> to automatically render your files).</p>
 <p>As recommended, I add the <code>/_site/</code> directory to my <code>.gitignore</code> file.</p>
 <p>Then, in order to keep code only executing locally, freeze the computation</p>
@@ -254,18 +270,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>As described <a href="https://gist.github.com/Z3tt/3dab3535007acf108391649766409421" title="https://gist.github.com/Z3tt/3dab3535007acf108391649766409421">here</a> I use <code>{usethis}</code> to initialize my github credentials, so first I have to install the package:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"usethis"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Installing usethis [2.1.6] ...
-    OK [linked cache]</code></pre>
-</div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>credentials<span class="sc">::</span><span class="fu">set_github_pat</span>(<span class="st">"&lt;my-gh-PAT&gt;"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>credentials<span class="sc">::</span><span class="fu">set_github_pat</span>() <span class="co"># and enter your PAT</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>If you don’t have a PAT, follow the instructions in the link above. To store the token permanently, use the .Renviron file of your project.</p>
 <p>It is really easy! But I don’t know why, I had to create the branch <code>gh-pages</code> on the remote manually to make the build-job work. Before github actions were failing with a error hinting to a missing <code>_publish.yml</code>. <a href="https://github.com/quarto-dev/quarto-cli/issues/3147" title="https://github.com/quarto-dev/quarto-cli/issues/3147">Here</a> I found out about the missing branch.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

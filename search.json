@@ -4,14 +4,28 @@
     "href": "index.html",
     "title": "weblog",
     "section": "",
-    "text": "How to setup a Quarto blog with gh-pages\n\n\n\n\n\n\n\nhowto\n\n\n\n\n\n\n\n\n\n\n\nJan 29, 2023\n\n\nmatthias berger\n\n\n\n\n\n\nNo matching items"
+    "text": "How to setup a Quarto blog with gh-pages\n\n\n\n\n\n\n\nhowto\n\n\n\n\n\n\n\n\n\n\n\nmatthias berger\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/setup/index.html",
     "href": "posts/setup/index.html",
     "title": "How to setup a Quarto blog with gh-pages",
     "section": "",
-    "text": "This is the first post in a Quarto blog. And since I do not know how to setup my gh-pages with it, I just write about how I found out.\n#TODO (using RStudio Quarto Blog template)\nStarting from here, I decide to take route number 3 (Use a GitHub Action to automatically render your files).\nAs recommended, I add the /_site/ directory to my .gitignore file.\nThen, in order to keep code only executing locally, freeze the computation\n\n\n_quarto.yml\n\nexecute:\n  freeze: auto\n\nNext, I create a file named publish.yml\n\n\n.github/workflows/publish.yml\n\non:\n  workflow_dispatch:\n  push:\n    branches: main\n\nname: Quarto Publish\n\njobs:\n  build-deploy:\n    runs-on: ubuntu-latest\n    permissions:\n      contents: write\n    steps:\n      - name: Check out repository\n        uses: actions/checkout@v3\n\n      - name: Set up Quarto\n        uses: quarto-dev/quarto-actions/setup@v2\n\n      - name: Render and Publish\n        uses: quarto-dev/quarto-actions/publish@v2\n        with:\n          target: gh-pages\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n\nNow, I check everything into my git repository and push to github. gh-pages should be initialized and I am ready to go.\nAs described here I use {usethis} to initialize my github credentials, so first I have to install the package:\n\ninstall.packages(\"usethis\")\n\nInstalling usethis [2.1.6] ...\n    OK [linked cache]\n\n\n\ncredentials::set_github_pat(\"<my-gh-PAT>\")\n\nIf you don’t have a PAT, follow the instructions in the link above. To store the token permanently, use the .Renviron file of your project.\nIt is really easy! But I don’t know why, I had to create the branch gh-pages on the remote manually to make the build-job work. Before github actions were failing with a error hinting to a missing _publish.yml. Here I found out about the missing branch."
+    "text": "This is the first post in a Quarto blog. And since I do not know how to setup my gh-pages with it, I just write about how I found out."
+  },
+  {
+    "objectID": "posts/setup/index.html#setup-a-quarto-blog-template",
+    "href": "posts/setup/index.html#setup-a-quarto-blog-template",
+    "title": "How to setup a Quarto blog with gh-pages",
+    "section": "Setup a Quarto Blog template",
+    "text": "Setup a Quarto Blog template\nFirst things first. I am using RStudio’s “Create Project”-dialog to use the “Quarto Blog” template. Let the screenshots speak for themselves:"
+  },
+  {
+    "objectID": "posts/setup/index.html#deploying-using-github-actions",
+    "href": "posts/setup/index.html#deploying-using-github-actions",
+    "title": "How to setup a Quarto blog with gh-pages",
+    "section": "Deploying using GitHub Actions",
+    "text": "Deploying using GitHub Actions\nStarting from here, I decide to take route number 3 (Use a GitHub Action to automatically render your files).\nAs recommended, I add the /_site/ directory to my .gitignore file.\nThen, in order to keep code only executing locally, freeze the computation\n\n\n_quarto.yml\n\nexecute:\n  freeze: auto\n\nNext, I create a file named publish.yml\n\n\n.github/workflows/publish.yml\n\non:\n  workflow_dispatch:\n  push:\n    branches: main\n\nname: Quarto Publish\n\njobs:\n  build-deploy:\n    runs-on: ubuntu-latest\n    permissions:\n      contents: write\n    steps:\n      - name: Check out repository\n        uses: actions/checkout@v3\n\n      - name: Set up Quarto\n        uses: quarto-dev/quarto-actions/setup@v2\n\n      - name: Render and Publish\n        uses: quarto-dev/quarto-actions/publish@v2\n        with:\n          target: gh-pages\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n\nNow, I check everything into my git repository and push to github. gh-pages should be initialized and I am ready to go.\nAs described here I use {usethis} to initialize my github credentials, so first I have to install the package:\n\ninstall.packages(\"usethis\")\n\n\ncredentials::set_github_pat() # and enter your PAT\n\nIf you don’t have a PAT, follow the instructions in the link above. To store the token permanently, use the .Renviron file of your project.\nIt is really easy! But I don’t know why, I had to create the branch gh-pages on the remote manually to make the build-job work. Before github actions were failing with a error hinting to a missing _publish.yml. Here I found out about the missing branch."
   },
   {
     "objectID": "about.html",
