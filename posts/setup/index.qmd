@@ -1,15 +1,23 @@
 ---
 title: "How to setup a Quarto blog with gh-pages"
 author: "matthias berger"
-date: "2023-01-29"
+date-modified: "`r Sys.Date()`"
 categories: [howto]
 ---
 
 ![](images/image-193588858.png){fig-alt="\"Starting a Quarto blog\" prompt on https://stablediffusionweb.com/#demo"}
 
-This is the first post in a Quarto blog. And since I do not know how to setup my gh-pages with it, I just write about how I found out.
+This is the first post in my Quarto blog. And since I do not know how to setup my gh-pages with it, I just write about how I find out.
 
-#TODO (using RStudio Quarto Blog template)
+## Setup a Quarto Blog template
+
+First things first. I am using RStudio's "Create Project"-dialog to use the "Quarto Blog" template. Let the screenshots speak for themselves:
+
+|                                                                           |                                                                           |
+|---------------------------------------------------------------------------|---------------------------------------------------------------------------|
+| ![](images/Bildschirmfoto%20vom%202023-01-30%2021-02-08.png){width="640"} | ![](images/Bildschirmfoto%20vom%202023-01-30%2021-03-02.png){width="640"} |
+
+## Deploying using GitHub Actions
 
 Starting from [here](https://quarto.org/docs/publishing/github-pages.html "https://quarto.org/docs/publishing/github-pages.html"), I decide to take route number 3 (Use a [GitHub Action](https://quarto.org/docs/publishing/github-pages.html#github-action) to automatically render your files).
 
@@ -57,11 +65,13 @@ Now, I check everything into my git repository and push to github. gh-pages shou
 As described [here](https://gist.github.com/Z3tt/3dab3535007acf108391649766409421 "https://gist.github.com/Z3tt/3dab3535007acf108391649766409421") I use `{usethis}` to initialize my github credentials, so first I have to install the package:
 
 ```{r}
+#| eval: false
 install.packages("usethis")
 ```
 
 ```{r}
-credentials::set_github_pat("<my-gh-PAT>")
+#| eval: false
+credentials::set_github_pat() # and enter your PAT
 ```
 
 If you don't have a PAT, follow the instructions in the link above. To store the token permanently, use the .Renviron file of your project. `r usethis::edit_r_environ(scope = "project")`
