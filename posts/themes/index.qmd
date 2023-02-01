@@ -5,7 +5,7 @@ date-modified: "`r Sys.Date()`"
 categories: [howto]
 ---
 
-![](images/image-107110832.png)
+![](images/image-107110832.png){fig-alt="picture of computer with html tag color theme"}
 
 Now that I have a running Quarto Blog setup on GitHub, I want to look into themes.
 
