@@ -12,7 +12,8 @@ website:
         href: https://fosstodon.org
 format:
   html:
-    theme: cosmo
+    theme: united
+    backgroundcolor: "#bbff00"
     css: styles.css
 
 editor: visual

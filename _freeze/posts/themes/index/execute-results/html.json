@@ -1,0 +1,14 @@
+{
+  "hash": "741acec6dd2b392f68c08cd89ee5296f",
+  "result": {
+    "markdown": "---\ntitle: \"How to change the HTML theme of your Quarto Blog\"\nauthor: \"matthias berger\"\ndate-modified: \"2023-02-01\"\ncategories: [howto]\n---\n\n\n![](images/image-107110832.png)\n\nNow that I have a running Quarto Blog setup on GitHub, I want to look into themes.\n\n## Change themes for your Quarto Blog\n\nAs described [here](https://quarto.org/docs/output-formats/html-themes.html \"https://quarto.org/docs/output-formats/html-themes.html\"), it should be pretty easy to set a different theme for the blog. I want to try the `united` theme of [Bootswatch](https://bootswatch.com/ \"https://bootswatch.com/\"). So I just change the string in following file\n\n``` {.yaml filename=\"_quarto.yml\"}\nformat:\n  html:\n    theme: united\n```\n\nThat's it.\n\n## But what about background-color?\n\nYeah, I found out how to change it, how do you like?\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
