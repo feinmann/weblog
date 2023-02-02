@@ -12,8 +12,7 @@ website:
         href: https://fosstodon.org
 format:
   html:
-    theme: united
-    backgroundcolor: "#bbff00"
+    theme: darkly
     css: styles.css
 
 editor: visual
