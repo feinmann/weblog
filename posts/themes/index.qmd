@@ -11,16 +11,52 @@ Now that I have a running Quarto Blog setup on GitHub, I want to look into theme
 
 ## Change themes for your Quarto Blog
 
-As described [here](https://quarto.org/docs/output-formats/html-themes.html "https://quarto.org/docs/output-formats/html-themes.html"), it should be pretty easy to set a different theme for the blog. I want to try the `united` theme of [Bootswatch](https://bootswatch.com/ "https://bootswatch.com/"). So I just change the string in following file
+As described [here](https://quarto.org/docs/output-formats/html-themes.html "https://quarto.org/docs/output-formats/html-themes.html"), it should be pretty easy to set a different theme for the blog. I want to try the `darkly` theme of [Bootswatch](https://bootswatch.com/ "https://bootswatch.com/"). So I just change the string in following file
 
 ``` {.yaml filename="_quarto.yml"}
 format:
   html:
-    theme: united
+    theme: darkly
 ```
 
 That's it.
 
-## But what about background-color?
+## But what about background colors?
 
-Yeah, I found out how to change it, how do you like?
+I also found out, that you can use your Inspector tool in firefox to identify certain elements of the blog, change some attributes and copy these new rules to your `styles.css` file. This file, if placed in the root of the blog, is set in the following way:
+
+``` {.yaml filename="_quarto.yml"}
+format:
+  html:
+    css: styles.css
+```
+
+So, just open the blog in firefox and hit `Ctrl + Shift + I` to open the Inspector. Then hit `Ctrl + Shift + C` to activate the select-tool. Hover over the blog and click a certain element. You can then discover the set properties. For example change the color using a comfortable color-picker. This will intermediately change the color. Right-click on the set property and copy the rule to your styles.css file. I played around with the inspector and copied the following rules:
+
+``` {.html filename="styles.css"}
+/* css styles */
+.navbar {
+    position: relative;
+    display: flex;
+    display: -webkit-flex;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    align-items: center;
+    -webkit-align-items: center;
+    justify-content: space-between;
+    -webkit-justify-content: space-between;
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+}
+
+.quarto-title-banner {
+    margin-bottom: 1em;
+    color: #dee2e6;
+    background: #627f37;
+}
+
+.quarto-title-banner {
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+}
+```
