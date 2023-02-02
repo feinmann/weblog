@@ -39,14 +39,14 @@
     "href": "posts/themes/index.html#change-themes-for-your-quarto-blog",
     "title": "How to change the HTML theme of your Quarto Blog",
     "section": "Change themes for your Quarto Blog",
-    "text": "Change themes for your Quarto Blog\nAs described here, it should be pretty easy to set a different theme for the blog. I want to try the united theme of Bootswatch. So I just change the string in following file\n\n\n_quarto.yml\n\nformat:\n  html:\n    theme: united\n\nThat’s it."
+    "text": "Change themes for your Quarto Blog\nAs described here, it should be pretty easy to set a different theme for the blog. I want to try the darkly theme of Bootswatch. So I just change the string in following file\n\n\n_quarto.yml\n\nformat:\n  html:\n    theme: darkly\n\nThat’s it."
   },
   {
-    "objectID": "posts/themes/index.html#but-what-about-background-color",
-    "href": "posts/themes/index.html#but-what-about-background-color",
+    "objectID": "posts/themes/index.html#but-what-about-background-colors",
+    "href": "posts/themes/index.html#but-what-about-background-colors",
     "title": "How to change the HTML theme of your Quarto Blog",
-    "section": "But what about background-color?",
-    "text": "But what about background-color?\nYeah, I found out how to change it, how do you like?"
+    "section": "But what about background colors?",
+    "text": "But what about background colors?\nI also found out, that you can use your Inspector tool in firefox to identify certain elements of the blog, change some attributes and copy these new rules to your styles.css file. This file, if placed in the root of the blog, is set in the following way:\n\n\n_quarto.yml\n\nformat:\n  html:\n    css: styles.css\n\nSo, just open the blog in firefox and hit Ctrl + Shift + I to open the Inspector. Then hit Ctrl + Shift + C to activate the select-tool. Hover over the blog and click a certain element. You can then discover the set properties. For example change the color using a comfortable color-picker. This will intermediately change the color. Right-click on the set property and copy the rule to your styles.css file. I played around with the inspector and copied the following rules:\n\n\nstyles.css\n\n/* css styles */\n.navbar {\n    position: relative;\n    display: flex;\n    display: -webkit-flex;\n    flex-wrap: wrap;\n    -webkit-flex-wrap: wrap;\n    align-items: center;\n    -webkit-align-items: center;\n    justify-content: space-between;\n    -webkit-justify-content: space-between;\n    padding-top: 0rem;\n    padding-bottom: 0rem;\n}\n\n.quarto-title-banner {\n    margin-bottom: 1em;\n    color: #dee2e6;\n    background: #627f37;\n}\n\n.quarto-title-banner {\n    padding-top: 1.5em;\n    padding-bottom: 1.5em;\n}"
   },
   {
     "objectID": "about.html",

@@ -1,1 +1,25 @@
 /* css styles */
+.navbar {
+	position: relative;
+	display: flex;
+	display: -webkit-flex;
+	flex-wrap: wrap;
+	-webkit-flex-wrap: wrap;
+	align-items: center;
+	-webkit-align-items: center;
+	justify-content: space-between;
+	-webkit-justify-content: space-between;
+	padding-top: 0rem;
+	padding-bottom: 0rem;
+}
+
+.quarto-title-banner {
+	margin-bottom: 1em;
+	color: #dee2e6;
+	background: #627f37;
+}
+
+.quarto-title-banner {
+	padding-top: 1.5em;
+	padding-bottom: 1.5em;
+}
