@@ -1,0 +1,11 @@
+{
+  "hash": "44482e7c08e3d41620c0516eaa981263",
+  "result": {
+    "markdown": "---\ntitle: How to create a normal distribution plot using Julia and Quarto\nauthor: matthias berger\ndate-modified: '2023-02-07'\ncategories:\n  - howto\n---\n\nOk, now that I like my setup more and more, I also want to use `Julia` to show off.\n\n![](images/image-1199289492.png)\n\n~~First requirement: `r install.packages(\"JuliaCall\")`~~ (I had to switch the render engine from knitr to jupyter, and there using the julia-1.8 kernel, because RStudio kept crashing...\n\n::: {.cell execution_count=1}\n``` {.julia .cell-code}\n1 + 1\n```\n\n::: {.cell-output .cell-output-display execution_count=2}\n```\n2\n```\n:::\n:::\n\n\nBut it works!!! For today I leave it like that. Tomorrow I will tackle the normal plot.\n\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}
