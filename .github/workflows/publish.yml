@@ -23,6 +23,7 @@ jobs:
         with:
           version: 1.8.5
       - run: julia -e 'using Pkg;Pkg.add("IJulia");Pkg.build("IJulia")'
+      - run: quarto check
       
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
