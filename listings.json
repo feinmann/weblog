@@ -3,7 +3,8 @@
     "listing": "/index.html",
     "items": [
       "/posts/setup/index.html",
-      "/posts/themes/index.html"
+      "/posts/themes/index.html",
+      "/posts/first-time-julia/index.html"
     ]
   }
 ]
