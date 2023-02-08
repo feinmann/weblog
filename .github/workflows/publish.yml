@@ -16,7 +16,15 @@ jobs:
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
-
+      
+      # add software dependencies here
+      - name: Install Julia
+      - uses: actions/checkout@v1.0.0
+      - uses: julia-actions/setup-julia@v1
+        with:
+          version: 1.8.5
+      - run: julia -e 'using Pkg;Pkg.add("IJulia");using IJulia;notebook()'
+      
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
         with:
