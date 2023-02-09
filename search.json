@@ -53,7 +53,7 @@
     "href": "posts/first-time-julia/index.html",
     "title": "How to create a normal distribution plot using Julia and Quarto",
     "section": "",
-    "text": "Ok, now that I like my setup more and more, I also want to use Julia to show off.\n\nFirst requirement: r install.packages(\"JuliaCall\") (I had to switch the render engine from knitr to jupyter, and there using the julia-1.8 kernel, because RStudio kept crashing…\n\n1 + 1\n\n2\n\n\nBut it works!!! For today I leave it like that. Tomorrow I will tackle the normal plot."
+    "text": "Ok, now that I like my setup more and more, I also want to use Julia to show off.\n\nFirst requirement: r install.packages(\"JuliaCall\") (I had to switch the render engine from knitr to jupyter, and there using the julia-1.8 kernel, because RStudio kept crashing…\n\n1 + 1\n\n2\n\n\nBut it works!!! For today I leave it like that. Tomorrow I will tackle the normal plot.\nAnd here it is:\n\nusing Plots\nusing StatsPlots\nusing Distributions\n\n\nplot(Normal(3, 5), lw = 3)"
   },
   {
     "objectID": "about.html",
