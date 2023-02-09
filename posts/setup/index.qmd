@@ -2,7 +2,7 @@
 title: "How to setup a Quarto blog with gh-pages"
 author: "matthias berger"
 date-modified: "`r Sys.Date()`"
-categories: [howto]
+categories: [howto, R]
 ---
 
 ![](images/image-193588858.png){fig-alt="\"Starting a Quarto blog\" prompt on https://stablediffusionweb.com/#demo"}

@@ -2,7 +2,7 @@
 title: "How to change the HTML theme of your Quarto Blog"
 author: "matthias berger"
 date-modified: "`r Sys.Date()`"
-categories: [howto]
+categories: [howto, css]
 ---
 
 ![](images/image-107110832.png){fig-alt="picture of computer with html tag color theme"}

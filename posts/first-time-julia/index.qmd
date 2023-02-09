@@ -2,7 +2,7 @@
 title: "How to create a normal distribution plot using Julia and Quarto"
 author: "matthias berger"
 date-modified: "2023-02-09"
-categories: [howto]
+categories: [howto, julia]
 jupyter: julia-1.8
 ---
 
