@@ -22,7 +22,7 @@ jobs:
         uses: julia-actions/setup-julia@v1.9.0
         with:
           version: 1.8.5
-      - run: julia -e 'using Pkg;Pkg.add("IJulia");Pkg.build("IJulia")'
+      - run: julia -e 'using Pkg;Pkg.add(["IJulia", "Plots", "StatsPlots", "Distributions"]);Pkg.build("IJulia")'
       - run: quarto check
       
       - name: Render and Publish

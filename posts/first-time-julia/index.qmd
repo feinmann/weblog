@@ -17,3 +17,15 @@ Ok, now that I like my setup more and more, I also want to use `Julia` to show o
 ```
 
 But it works!!! For today I leave it like that. Tomorrow I will tackle the normal plot.
+
+And here it is:
+
+```{julia}
+using Plots
+using StatsPlots
+using Distributions
+```
+
+```{julia}
+plot(Normal(3, 5), lw = 3)
+```
