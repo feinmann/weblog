@@ -1,0 +1,11 @@
+{
+  "hash": "7b880f5d261a4f265c4788f3f10506dc",
+  "result": {
+    "markdown": "---\ntitle: \"How to create a normal distribution plot using Python and Quarto\"\nauthor: \"matthias berger\"\ndate-modified: \"2023-02-10\"\ncategories: [howto, python]\n---\n\nOk, now that I like my setup more and more, and that I have also included `Julia`, I also want to use `Python`. (I think that I implicitly use jupyter here, as I now use `code` with the quarto-extension, but to be honest, I am not sure 🙈)\n\n::: {.cell execution_count=1}\n``` {.python .cell-code}\n1 + 1\n```\n\n::: {.cell-output .cell-output-display execution_count=5}\n```\n2\n```\n:::\n:::\n\n\n::: {.cell execution_count=2}\n``` {.python .cell-code}\nimport matplotlib.pyplot as plt\nplt.plot([0,1,2,3], [0,1,2,3], \"-o\")\nplt.show()\n```\n\n::: {.cell-output .cell-output-display}\n![](index_files/figure-html/cell-3-output-1.png){width=571 height=411}\n:::\n:::\n\n\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

@@ -1,0 +1,18 @@
+---
+title: "How to create a normal distribution plot using Python and Quarto"
+author: "matthias berger"
+date-modified: "2023-02-10"
+categories: [howto, python]
+---
+
+Ok, now that I like my setup more and more, and that I have also included `Julia`, I also want to use `Python`. (I think that I implicitly use jupyter here, as I now use `code` with the quarto-extension, but to be honest, I am not sure 🙈)
+
+```{python}
+1 + 1
+```
+
+```{python}
+import matplotlib.pyplot as plt
+plt.plot([0,1,2,3], [0,1,2,3], "-o")
+plt.show()
+```
