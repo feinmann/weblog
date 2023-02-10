@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "weblog",
     "section": "",
-    "text": "How to setup a Quarto blog with gh-pages\n\n\n\n\n\n\n\nhowto\n\n\nR\n\n\n\n\n\n\n\n\n\n\n\nmatthias berger\n\n\n\n\n\n\n  \n\n\n\n\nHow to change the HTML theme of your Quarto Blog\n\n\n\n\n\n\n\nhowto\n\n\ncss\n\n\n\n\n\n\n\n\n\n\n\nmatthias berger\n\n\n\n\n\n\n  \n\n\n\n\nHow to create a normal distribution plot using Julia and Quarto\n\n\n\n\n\n\n\nhowto\n\n\njulia\n\n\n\n\n\n\n\n\n\n\n\nmatthias berger\n\n\n\n\n\n\nNo matching items"
+    "text": "How to setup a Quarto blog with gh-pages\n\n\n\n\n\n\n\nhowto\n\n\nR\n\n\n\n\n\n\n\n\n\n\n\nmatthias berger\n\n\n\n\n\n\n  \n\n\n\n\nHow to change the HTML theme of your Quarto Blog\n\n\n\n\n\n\n\nhowto\n\n\ncss\n\n\n\n\n\n\n\n\n\n\n\nmatthias berger\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHow to create a normal distribution plot using Python and Quarto\n\n\n\n\n\n\n\nhowto\n\n\npython\n\n\n\n\n\n\n\n\n\n\n\nmatthias berger\n\n\n\n\n\n\n  \n\n\n\n\nHow to create a normal distribution plot using Julia and Quarto\n\n\n\n\n\n\n\nhowto\n\n\njulia\n\n\n\n\n\n\n\n\n\n\n\nmatthias berger\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/setup/index.html",
@@ -47,6 +47,13 @@
     "title": "How to change the HTML theme of your Quarto Blog",
     "section": "But what about background colors?",
     "text": "But what about background colors?\nI also found out, that you can use your Inspector tool in firefox to identify certain elements of the blog, change some attributes and copy these new rules to your styles.css file. This file, if placed in the root of the blog, is set in the following way:\n\n\n_quarto.yml\n\nformat:\n  html:\n    css: styles.css\n\nSo, just open the blog in firefox and hit Ctrl + Shift + I to open the Inspector. Then hit Ctrl + Shift + C to activate the select-tool. Hover over the blog and click a certain element. You can then discover the set properties. For example change the color using a comfortable color-picker. This will intermediately change the color. Right-click on the set property and copy the rule to your styles.css file. I played around with the inspector and copied the following rules:\n\n\nstyles.css\n\n/* css styles */\n.navbar {\n    position: relative;\n    display: flex;\n    display: -webkit-flex;\n    flex-wrap: wrap;\n    -webkit-flex-wrap: wrap;\n    align-items: center;\n    -webkit-align-items: center;\n    justify-content: space-between;\n    -webkit-justify-content: space-between;\n    padding-top: 0rem;\n    padding-bottom: 0rem;\n}\n\n.quarto-title-banner {\n    margin-bottom: 1em;\n    color: #dee2e6;\n    background: #627f37;\n}\n\n.quarto-title-banner {\n    padding-top: 1.5em;\n    padding-bottom: 1.5em;\n}"
+  },
+  {
+    "objectID": "posts/first-time-python/index.html",
+    "href": "posts/first-time-python/index.html",
+    "title": "How to create a normal distribution plot using Python and Quarto",
+    "section": "",
+    "text": "Ok, now that I like my setup more and more, and that I have also included Julia, I also want to use Python. (I think that I implicitly use jupyter here, as I now use code with the quarto-extension, but to be honest, I am not sure 🙈)\n\n1 + 1\n\n2\n\n\n\nimport matplotlib.pyplot as plt\nplt.plot([0,1,2,3], [0,1,2,3], \"-o\")\nplt.show()"
   },
   {
     "objectID": "posts/first-time-julia/index.html",
