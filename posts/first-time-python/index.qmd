@@ -8,11 +8,112 @@ categories: [howto, python]
 Ok, now that I like my setup more and more, and that I have also included `Julia`, I also want to use `Python`. (I think that I implicitly use jupyter here, as I now use `code` with the quarto-extension, but to be honest, I am not sure 🙈)
 
 ```{python}
-1 + 1
+import matplotlib.pyplot as plt
+import numpy as np
+from scipy.stats import norm
+  
+x_axis = np.arange(-3, 3, 0.01)
+
+plt.plot(x_axis, norm.pdf(x_axis, 0, 1))
+plt.show()
+```
+
+## Layout
+
+~~I noted that the plot is bigger than the width of the blog.~~ (This effect was gone later...) So I search for some possibilities to adjust and [here](https://quarto.org/docs/authoring/figures.html#computations "https://quarto.org/docs/authoring/figures.html#computations") is a good starting point.
+
+Here I use the hash-pipe to set the layout, with one picture of width 100:
+
+``` {{python}}
+#| layout: [[100]]
+plt.plot(x_axis, norm.pdf(x_axis, 0, 1))
+plt.show()
 ```
 
 ```{python}
-import matplotlib.pyplot as plt
-plt.plot([0,1,2,3], [0,1,2,3], "-o")
+#| echo: false
+#| layout: [[100]]
+plt.plot(x_axis, norm.pdf(x_axis, 0, 1))
 plt.show()
 ```
+
+The outer squared brackets indicate the whole layout, where the inner squared brackets are the first row, that is here filled 100% with one plot.
+
+It is also possible to set more than one figure:
+
+``` {{python}}
+#| layout: [[50, 50]]
+plt.plot(x_axis, norm.pdf(x_axis, 0, 1))
+plt.show()
+
+plt.plot(x_axis, norm.pdf(x_axis, 1, 2))
+plt.show()
+```
+
+```{python}
+#| echo: false
+#| layout: [[50, 50]]
+plt.plot(x_axis, norm.pdf(x_axis, 0, 1))
+plt.show()
+
+plt.plot(x_axis, norm.pdf(x_axis, 1, 2))
+plt.show()
+```
+
+Here is some example code from the [quartos docs](https://github.com/quarto-dev/quarto-web/blob/main/docs/authoring/figures.qmd#L392 "https://github.com/quarto-dev/quarto-web/blob/main/docs/authoring/figures.qmd#L392"), that I quite like. But in the quarto docs they use fixed image-files to simulate the output, where I use a duplicated codeblock, once with a header
+
+    ``` {{python}}
+
+and once as a normal codeblock with `#| echo: false` to suppress the output of the code, but to generate the figure.
+
+This example code generates a tabset to compare `python` and `R`, I guess I will use this a lot in the future.
+
+::: panel-tabset
+#### Jupyter
+
+``` {{python}}
+#| layout-ncol: 2
+#| fig-cap: 
+#|   - "Line Plot 1"
+#|   - "Line Plot 2"
+import matplotlib.pyplot as plt
+plt.plot([1,23,2,4])
+plt.show()
+plt.plot([8,65,23,90])
+plt.show()
+```
+
+```{python}
+#| echo: false
+#| layout-ncol: 2
+#| fig-cap: 
+#|   - "Line Plot 1"
+#|   - "Line Plot 2"
+import matplotlib.pyplot as plt
+plt.plot([1,23,2,4])
+plt.show()
+plt.plot([8,65,23,90])
+plt.show()
+```
+
+#### Knitr
+
+``` {{r}}
+#| layout-ncol: 2
+#| fig-cap: 
+#|   - "Speed and Stopping Distances of Cars"
+#|   - "Vapor Pressure of Mercury as a Function of Temperature"
+plot(cars)
+plot(pressure)
+```
+
+```{r}
+#| echo: false
+#| layout-ncol: 2
+#| fig-cap: 
+#|   - "Speed and Stopping Distances of Cars"
+#|   - "Vapor Pressure of Mercury as a Function of Temperature"
+plot(cars)
+plot(pressure)
+```
+:::
