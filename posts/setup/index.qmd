@@ -1,7 +1,7 @@
 ---
 title: "How to setup a Quarto blog with gh-pages"
 author: "matthias berger"
-date-modified: "`r Sys.Date()`"
+date: "2023-01-29"
 categories: [howto, R]
 ---
 
