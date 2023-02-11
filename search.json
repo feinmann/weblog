@@ -53,7 +53,14 @@
     "href": "posts/first-time-python/index.html",
     "title": "How to create a normal distribution plot using Python and Quarto",
     "section": "",
-    "text": "Ok, now that I like my setup more and more, and that I have also included Julia, I also want to use Python. (I think that I implicitly use jupyter here, as I now use code with the quarto-extension, but to be honest, I am not sure 🙈)\n\n1 + 1\n\n2\n\n\n\nimport matplotlib.pyplot as plt\nplt.plot([0,1,2,3], [0,1,2,3], \"-o\")\nplt.show()"
+    "text": "Ok, now that I like my setup more and more, and that I have also included Julia, I also want to use Python. (I think that I implicitly use jupyter here, as I now use code with the quarto-extension, but to be honest, I am not sure 🙈)"
+  },
+  {
+    "objectID": "posts/first-time-python/index.html#layout",
+    "href": "posts/first-time-python/index.html#layout",
+    "title": "How to create a normal distribution plot using Python and Quarto",
+    "section": "Layout",
+    "text": "Layout\nI noted that the plot is bigger than the width of the blog. (This effect was gone later…) So I search for some possibilities to adjust and here is a good starting point.\nHere I use the hash-pipe to set the layout, with one picture of width 100:\n```{python}\n#| layout: [[100]]\nplt.plot(x_axis, norm.pdf(x_axis, 0, 1))\nplt.show()\n```\n\n\n\n\n\n\n\nThe outer squared brackets indicate the whole layout, where the inner squared brackets are the first row, that is here filled 100% with one plot.\nIt is also possible to set more than one figure:\n```{python}\n#| layout: [[50, 50]]\nplt.plot(x_axis, norm.pdf(x_axis, 0, 1))\nplt.show()\n\nplt.plot(x_axis, norm.pdf(x_axis, 1, 2))\nplt.show()\n```\n\n\n\n\n\n\n\n\n\n\nHere is some example code from the quartos docs, that I quite like. But in the quarto docs they use fixed image-files to simulate the output, where I use a duplicated codeblock, once with a header\n``` {{python}}\nand once as a normal codeblock with #| echo: false to suppress the output of the code, but to generate the figure.\nThis example code generates a tabset to compare python and R, I guess I will use this a lot in the future.\n\nJupyterKnitr\n\n\n```{python}\n#| layout-ncol: 2\n#| fig-cap: \n#|   - \"Line Plot 1\"\n#|   - \"Line Plot 2\"\nimport matplotlib.pyplot as plt\nplt.plot([1,23,2,4])\nplt.show()\nplt.plot([8,65,23,90])\nplt.show()\n```\n\n\n\n\n\n\nLine Plot 1\n\n\n\n\n\n\n\nLine Plot 2\n\n\n\n\n\n\n\n```{r}\n#| layout-ncol: 2\n#| fig-cap: \n#|   - \"Speed and Stopping Distances of Cars\"\n#|   - \"Vapor Pressure of Mercury as a Function of Temperature\"\nplot(cars)\nplot(pressure)\n```\n\n\n\n\n\n\nSpeed and Stopping Distances of Cars\n\n\n\n\n\n\n\nVapor Pressure of Mercury as a Function of Temperature"
   },
   {
     "objectID": "posts/first-time-julia/index.html",
