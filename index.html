@@ -70,9 +70,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-title","listing-author","listing-image","listing-description","listing-categories"],
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -166,77 +166,7 @@ ul.task-list li input[type="checkbox"] {
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="howto,R" data-listing-file-modified-sort="1676102759503" data-listing-reading-time-sort="2.6">
-<div class="thumbnail">
-<p><a href="./posts/setup/index.html"> <img src="./posts/setup/images/image-193588858.png" class="thumnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./posts/setup/index.html">
-<h3 class="no-anchor listing-title">
-How to setup a Quarto blog with gh-pages
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('howto'); return false;">
-howto
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
-R
-</div>
-</div>
-<a href="./posts/setup/index.html">
-<div class="listing-description">
-This is the first post in a Quarto blog. And since I do not know how to setup my gh-pages with it, I just write about how I found out.
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/setup/index.html">
-<div class="listing-author">
-matthias berger
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="howto,css" data-listing-file-modified-sort="1676102759503" data-listing-reading-time-sort="1.505">
-<div class="thumbnail">
-<p><a href="./posts/themes/index.html"> <img src="./posts/themes/images/image-107110832.png" class="thumnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./posts/themes/index.html">
-<h3 class="no-anchor listing-title">
-How to change the HTML theme of your Quarto Blog
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('howto'); return false;">
-howto
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('css'); return false;">
-css
-</div>
-</div>
-<a href="./posts/themes/index.html">
-<div class="listing-description">
-Now that I have a running Quarto Blog setup on GitHub, I want to look into themes.
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/themes/index.html">
-<div class="listing-author">
-matthias berger
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="howto,python" data-listing-file-modified-sort="1676102759491" data-listing-reading-time-sort="1.8">
+<div class="quarto-post image-right" data-index="0" data-categories="howto,python" data-listing-date-sort="1675987200000" data-listing-file-modified-sort="1676112848339" data-listing-reading-time-sort="1.8">
 <div class="thumbnail">
 <a href="./posts/first-time-python/index.html">
 <div class="thumbnail-image">
@@ -269,13 +199,16 @@ Ok, now that I like my setup more and more, and that I have also included <code>
 </div>
 <div class="metadata">
 <a href="./posts/first-time-python/index.html">
+<div class="listing-date">
+Feb 10, 2023
+</div>
 <div class="listing-author">
 matthias berger
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-categories="howto,julia" data-listing-file-modified-sort="1676102759491" data-listing-reading-time-sort="0.355">
+<div class="quarto-post image-right" data-index="1" data-categories="howto,julia" data-listing-date-sort="1675900800000" data-listing-file-modified-sort="1676112848339" data-listing-reading-time-sort="0.355">
 <div class="thumbnail">
 <p><a href="./posts/first-time-julia/index.html"> <img src="./posts/first-time-julia/images/image-1199289492.png" class="thumnail-image"> </a></p>
 </div>
@@ -304,6 +237,85 @@ Ok, now that I like my setup more and more, I also want to use <code>Julia</code
 </div>
 <div class="metadata">
 <a href="./posts/first-time-julia/index.html">
+<div class="listing-date">
+Feb 9, 2023
+</div>
+<div class="listing-author">
+matthias berger
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="2" data-categories="howto,css" data-listing-date-sort="1675209600000" data-listing-file-modified-sort="1676112848351" data-listing-reading-time-sort="1.505">
+<div class="thumbnail">
+<p><a href="./posts/themes/index.html"> <img src="./posts/themes/images/image-107110832.png" class="thumnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./posts/themes/index.html">
+<h3 class="no-anchor listing-title">
+How to change the HTML theme of your Quarto Blog
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('howto'); return false;">
+howto
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('css'); return false;">
+css
+</div>
+</div>
+<a href="./posts/themes/index.html">
+<div class="listing-description">
+Now that I have a running Quarto Blog setup on GitHub, I want to look into themes.
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/themes/index.html">
+<div class="listing-date">
+Feb 1, 2023
+</div>
+<div class="listing-author">
+matthias berger
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="3" data-categories="howto,R" data-listing-date-sort="1674950400000" data-listing-file-modified-sort="1676112848351" data-listing-reading-time-sort="2.6">
+<div class="thumbnail">
+<p><a href="./posts/setup/index.html"> <img src="./posts/setup/images/image-193588858.png" class="thumnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./posts/setup/index.html">
+<h3 class="no-anchor listing-title">
+How to setup a Quarto blog with gh-pages
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('howto'); return false;">
+howto
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
+R
+</div>
+</div>
+<a href="./posts/setup/index.html">
+<div class="listing-description">
+This is the first post in a Quarto blog. And since I do not know how to setup my gh-pages with it, I just write about how I found out.
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/setup/index.html">
+<div class="listing-date">
+Jan 29, 2023
+</div>
 <div class="listing-author">
 matthias berger
 </div>

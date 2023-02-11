@@ -2,10 +2,10 @@
   {
     "listing": "/index.html",
     "items": [
-      "/posts/setup/index.html",
-      "/posts/themes/index.html",
       "/posts/first-time-python/index.html",
-      "/posts/first-time-julia/index.html"
+      "/posts/first-time-julia/index.html",
+      "/posts/themes/index.html",
+      "/posts/setup/index.html"
     ]
   }
 ]
