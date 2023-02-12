@@ -6,10 +6,10 @@ about:
   links:
     - icon: mastodon
       text: Mastodon
-      href: https://fosstodon.org
+      href: https://fosstodon.org/@feinmann 
     - icon: github
       text: Github
-      href: https://github.com
+      href: https://github.com/feinmann 
 ---
 
 Image above: "A logo for my blog profile." prompt on [stablediffusionweb](https://stablediffusionweb.com/#demo "https://stablediffusionweb.com/#demo")

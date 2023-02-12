@@ -1,5 +1,5 @@
 ---
-title: "weblog"
+title: "Posts about R, Python, Julia and Quarto"
 listing:
   contents: posts
   sort: "date desc"
