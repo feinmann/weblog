@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/webR/index.html",
       "/posts/first-time-python/index.html",
       "/posts/first-time-julia/index.html",
       "/posts/themes/index.html",

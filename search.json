@@ -1,31 +1,31 @@
 [
   {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Image above: “A logo for my blog profile.” prompt on stablediffusionweb"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Posts about R, Python, Julia and Quarto",
     "section": "",
-    "text": "How to create a normal distribution plot using Python and Quarto\n\n\n\n\n\n\n\nhowto\n\n\npython\n\n\n\n\n\n\n\n\n\n\n\nFeb 10, 2023\n\n\nmatthias berger\n\n\n\n\n\n\n  \n\n\n\n\nHow to create a normal distribution plot using Julia and Quarto\n\n\n\n\n\n\n\nhowto\n\n\njulia\n\n\n\n\n\n\n\n\n\n\n\nFeb 9, 2023\n\n\nmatthias berger\n\n\n\n\n\n\n  \n\n\n\n\nHow to change the HTML theme of your Quarto Blog\n\n\n\n\n\n\n\nhowto\n\n\ncss\n\n\n\n\n\n\n\n\n\n\n\nFeb 1, 2023\n\n\nmatthias berger\n\n\n\n\n\n\n  \n\n\n\n\nHow to setup a Quarto blog with gh-pages\n\n\n\n\n\n\n\nhowto\n\n\nR\n\n\n\n\n\n\n\n\n\n\n\nJan 29, 2023\n\n\nmatthias berger\n\n\n\n\n\n\nNo matching items"
+    "text": "Using WebR within Quarto\n\n\n\n\n\n\n\nhowto\n\n\nR\n\n\n\n\n\n\n\n\n\n\n\nMar 13, 2023\n\n\nmatthias berger\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHow to create a normal distribution plot using Python and Quarto\n\n\n\n\n\n\n\nhowto\n\n\npython\n\n\n\n\n\n\n\n\n\n\n\nFeb 10, 2023\n\n\nmatthias berger\n\n\n\n\n\n\n  \n\n\n\n\nHow to create a normal distribution plot using Julia and Quarto\n\n\n\n\n\n\n\nhowto\n\n\njulia\n\n\n\n\n\n\n\n\n\n\n\nFeb 9, 2023\n\n\nmatthias berger\n\n\n\n\n\n\n  \n\n\n\n\nHow to change the HTML theme of your Quarto Blog\n\n\n\n\n\n\n\nhowto\n\n\ncss\n\n\n\n\n\n\n\n\n\n\n\nFeb 1, 2023\n\n\nmatthias berger\n\n\n\n\n\n\n  \n\n\n\n\nHow to setup a Quarto blog with gh-pages\n\n\n\n\n\n\n\nhowto\n\n\nR\n\n\n\n\n\n\n\n\n\n\n\nJan 29, 2023\n\n\nmatthias berger\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "posts/setup/index.html",
-    "href": "posts/setup/index.html",
-    "title": "How to setup a Quarto blog with gh-pages",
+    "objectID": "posts/first-time-python/index.html",
+    "href": "posts/first-time-python/index.html",
+    "title": "How to create a normal distribution plot using Python and Quarto",
     "section": "",
-    "text": "This is the first post in a Quarto blog. And since I do not know how to setup my gh-pages with it, I just write about how I found out."
+    "text": "Ok, now that I like my setup more and more, and that I have also included Julia, I also want to use Python. (I think that I implicitly use jupyter here, as I now use code with the quarto-extension, but to be honest, I am not sure 🙈)"
   },
   {
-    "objectID": "posts/setup/index.html#setup-a-quarto-blog-template",
-    "href": "posts/setup/index.html#setup-a-quarto-blog-template",
-    "title": "How to setup a Quarto blog with gh-pages",
-    "section": "Setup a Quarto Blog template",
-    "text": "Setup a Quarto Blog template\nFirst things first. I am using RStudio’s “Create Project”-dialog to use the “Quarto Blog” template. Let the screenshots speak for themselves:"
-  },
-  {
-    "objectID": "posts/setup/index.html#deploying-using-github-actions",
-    "href": "posts/setup/index.html#deploying-using-github-actions",
-    "title": "How to setup a Quarto blog with gh-pages",
-    "section": "Deploying using GitHub Actions",
-    "text": "Deploying using GitHub Actions\nStarting from here, I decide to take route number 3 (Use a GitHub Action to automatically render your files).\nAs recommended, I add the /_site/ directory to my .gitignore file.\nThen, in order to keep code only executing locally, freeze the computation\n\n\n_quarto.yml\n\nexecute:\n  freeze: auto\n\nNext, I create a file named publish.yml\n\n\n.github/workflows/publish.yml\n\non:\n  workflow_dispatch:\n  push:\n    branches: main\n\nname: Quarto Publish\n\njobs:\n  build-deploy:\n    runs-on: ubuntu-latest\n    permissions:\n      contents: write\n    steps:\n      - name: Check out repository\n        uses: actions/checkout@v3\n\n      - name: Set up Quarto\n        uses: quarto-dev/quarto-actions/setup@v2\n\n      - name: Render and Publish\n        uses: quarto-dev/quarto-actions/publish@v2\n        with:\n          target: gh-pages\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n\nNow, I check everything into my git repository and push to github. gh-pages should be initialized and I am ready to go.\nAs described here I use {usethis} to initialize my github credentials, so first I have to install the package:\n\ninstall.packages(\"usethis\")\n\n\ncredentials::set_github_pat() # and enter your PAT\n\nIf you don’t have a PAT, follow the instructions in the link above. To store the token permanently, use the .Renviron file of your project.\nIt is really easy! But I don’t know why, I had to create the branch gh-pages on the remote manually to make the build-job work. Before github actions were failing with a error hinting to a missing _publish.yml. Here I found out about the missing branch."
+    "objectID": "posts/first-time-python/index.html#layout",
+    "href": "posts/first-time-python/index.html#layout",
+    "title": "How to create a normal distribution plot using Python and Quarto",
+    "section": "Layout",
+    "text": "Layout\nI noted that the plot is bigger than the width of the blog. (This effect was gone later…) So I search for some possibilities to adjust and here is a good starting point.\nHere I use the hash-pipe to set the layout, with one picture of width 100:\n```{python}\n#| layout: [[100]]\nplt.plot(x_axis, norm.pdf(x_axis, 0, 1))\nplt.show()\n```\n\n\n\n\n\n\n\nThe outer squared brackets indicate the whole layout, where the inner squared brackets are the first row, that is here filled 100% with one plot.\nIt is also possible to set more than one figure:\n```{python}\n#| layout: [[50, 50]]\nplt.plot(x_axis, norm.pdf(x_axis, 0, 1))\nplt.show()\n\nplt.plot(x_axis, norm.pdf(x_axis, 1, 2))\nplt.show()\n```\n\n\n\n\n\n\n\n\n\n\nHere is some example code from the quartos docs, that I quite like. But in the quarto docs they use fixed image-files to simulate the output, where I use a duplicated codeblock, once with a header\n``` {{python}}\nand once as a normal codeblock with #| echo: false to suppress the output of the code, but to generate the figure.\nThis example code generates a tabset to compare python and R, I guess I will use this a lot in the future.\n\nJupyterKnitr\n\n\n```{python}\n#| layout-ncol: 2\n#| fig-cap: \n#|   - \"Line Plot 1\"\n#|   - \"Line Plot 2\"\nimport matplotlib.pyplot as plt\nplt.plot([1,23,2,4])\nplt.show()\nplt.plot([8,65,23,90])\nplt.show()\n```\n\n\n\n\n\n\nLine Plot 1\n\n\n\n\n\n\n\nLine Plot 2\n\n\n\n\n\n\n\n```{r}\n#| layout-ncol: 2\n#| fig-cap: \n#|   - \"Speed and Stopping Distances of Cars\"\n#|   - \"Vapor Pressure of Mercury as a Function of Temperature\"\nplot(cars)\nplot(pressure)\n```\n\n\n\n\n\n\nSpeed and Stopping Distances of Cars\n\n\n\n\n\n\n\nVapor Pressure of Mercury as a Function of Temperature"
   },
   {
     "objectID": "posts/themes/index.html",
@@ -49,18 +49,32 @@
     "text": "But what about background colors?\nI also found out, that you can use your Inspector tool in firefox to identify certain elements of the blog, change some attributes and copy these new rules to your styles.css file. This file, if placed in the root of the blog, is set in the following way:\n\n\n_quarto.yml\n\nformat:\n  html:\n    css: styles.css\n\nSo, just open the blog in firefox and hit Ctrl + Shift + I to open the Inspector. Then hit Ctrl + Shift + C to activate the select-tool. Hover over the blog and click a certain element. You can then discover the set properties. For example change the color using a comfortable color-picker. This will intermediately change the color. Right-click on the set property and copy the rule to your styles.css file. I played around with the inspector and copied the following rules:\n\n\nstyles.css\n\n/* css styles */\n.navbar {\n    position: relative;\n    display: flex;\n    display: -webkit-flex;\n    flex-wrap: wrap;\n    -webkit-flex-wrap: wrap;\n    align-items: center;\n    -webkit-align-items: center;\n    justify-content: space-between;\n    -webkit-justify-content: space-between;\n    padding-top: 0rem;\n    padding-bottom: 0rem;\n}\n\n.quarto-title-banner {\n    margin-bottom: 1em;\n    color: #dee2e6;\n    background: #627f37;\n}\n\n.quarto-title-banner {\n    padding-top: 1.5em;\n    padding-bottom: 1.5em;\n}"
   },
   {
-    "objectID": "posts/first-time-python/index.html",
-    "href": "posts/first-time-python/index.html",
-    "title": "How to create a normal distribution plot using Python and Quarto",
+    "objectID": "posts/setup/index.html",
+    "href": "posts/setup/index.html",
+    "title": "How to setup a Quarto blog with gh-pages",
     "section": "",
-    "text": "Ok, now that I like my setup more and more, and that I have also included Julia, I also want to use Python. (I think that I implicitly use jupyter here, as I now use code with the quarto-extension, but to be honest, I am not sure 🙈)"
+    "text": "This is the first post in a Quarto blog. And since I do not know how to setup my gh-pages with it, I just write about how I found out."
   },
   {
-    "objectID": "posts/first-time-python/index.html#layout",
-    "href": "posts/first-time-python/index.html#layout",
-    "title": "How to create a normal distribution plot using Python and Quarto",
-    "section": "Layout",
-    "text": "Layout\nI noted that the plot is bigger than the width of the blog. (This effect was gone later…) So I search for some possibilities to adjust and here is a good starting point.\nHere I use the hash-pipe to set the layout, with one picture of width 100:\n```{python}\n#| layout: [[100]]\nplt.plot(x_axis, norm.pdf(x_axis, 0, 1))\nplt.show()\n```\n\n\n\n\n\n\n\nThe outer squared brackets indicate the whole layout, where the inner squared brackets are the first row, that is here filled 100% with one plot.\nIt is also possible to set more than one figure:\n```{python}\n#| layout: [[50, 50]]\nplt.plot(x_axis, norm.pdf(x_axis, 0, 1))\nplt.show()\n\nplt.plot(x_axis, norm.pdf(x_axis, 1, 2))\nplt.show()\n```\n\n\n\n\n\n\n\n\n\n\nHere is some example code from the quartos docs, that I quite like. But in the quarto docs they use fixed image-files to simulate the output, where I use a duplicated codeblock, once with a header\n``` {{python}}\nand once as a normal codeblock with #| echo: false to suppress the output of the code, but to generate the figure.\nThis example code generates a tabset to compare python and R, I guess I will use this a lot in the future.\n\nJupyterKnitr\n\n\n```{python}\n#| layout-ncol: 2\n#| fig-cap: \n#|   - \"Line Plot 1\"\n#|   - \"Line Plot 2\"\nimport matplotlib.pyplot as plt\nplt.plot([1,23,2,4])\nplt.show()\nplt.plot([8,65,23,90])\nplt.show()\n```\n\n\n\n\n\n\nLine Plot 1\n\n\n\n\n\n\n\nLine Plot 2\n\n\n\n\n\n\n\n```{r}\n#| layout-ncol: 2\n#| fig-cap: \n#|   - \"Speed and Stopping Distances of Cars\"\n#|   - \"Vapor Pressure of Mercury as a Function of Temperature\"\nplot(cars)\nplot(pressure)\n```\n\n\n\n\n\n\nSpeed and Stopping Distances of Cars\n\n\n\n\n\n\n\nVapor Pressure of Mercury as a Function of Temperature"
+    "objectID": "posts/setup/index.html#setup-a-quarto-blog-template",
+    "href": "posts/setup/index.html#setup-a-quarto-blog-template",
+    "title": "How to setup a Quarto blog with gh-pages",
+    "section": "Setup a Quarto Blog template",
+    "text": "Setup a Quarto Blog template\nFirst things first. I am using RStudio’s “Create Project”-dialog to use the “Quarto Blog” template. Let the screenshots speak for themselves:"
+  },
+  {
+    "objectID": "posts/setup/index.html#deploying-using-github-actions",
+    "href": "posts/setup/index.html#deploying-using-github-actions",
+    "title": "How to setup a Quarto blog with gh-pages",
+    "section": "Deploying using GitHub Actions",
+    "text": "Deploying using GitHub Actions\nStarting from here, I decide to take route number 3 (Use a GitHub Action to automatically render your files).\nAs recommended, I add the /_site/ directory to my .gitignore file.\nThen, in order to keep code only executing locally, freeze the computation\n\n\n_quarto.yml\n\nexecute:\n  freeze: auto\n\nNext, I create a file named publish.yml\n\n\n.github/workflows/publish.yml\n\non:\n  workflow_dispatch:\n  push:\n    branches: main\n\nname: Quarto Publish\n\njobs:\n  build-deploy:\n    runs-on: ubuntu-latest\n    permissions:\n      contents: write\n    steps:\n      - name: Check out repository\n        uses: actions/checkout@v3\n\n      - name: Set up Quarto\n        uses: quarto-dev/quarto-actions/setup@v2\n\n      - name: Render and Publish\n        uses: quarto-dev/quarto-actions/publish@v2\n        with:\n          target: gh-pages\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n\nNow, I check everything into my git repository and push to github. gh-pages should be initialized and I am ready to go.\nAs described here I use {usethis} to initialize my github credentials, so first I have to install the package:\n\ninstall.packages(\"usethis\")\n\n\ncredentials::set_github_pat() # and enter your PAT\n\nIf you don’t have a PAT, follow the instructions in the link above. To store the token permanently, use the .Renviron file of your project.\nIt is really easy! But I don’t know why, I had to create the branch gh-pages on the remote manually to make the build-job work. Before github actions were failing with a error hinting to a missing _publish.yml. Here I found out about the missing branch."
+  },
+  {
+    "objectID": "posts/webR/index.html",
+    "href": "posts/webR/index.html",
+    "title": "Using WebR within Quarto",
+    "section": "",
+    "text": "Through mastodon I found a hint by Bob Rudis towards webR and got hooked. I took only a weekend to setup Interactive Data Lessons by another mastodon user.\nHere I give a short insight how you can setup your own webR instance within Quarto.\nFirst, install the Quarto extension (requires Quarto >v1.2):\n```{bash}\nquarto install extension coatless/quarto-webr\n```\nThen add this to your YAML:\n```{yaml}\nengine: knitr\nfilters:\n  - webr\n```\nNow you can insert webR codeblocks by\n```{webr}\n\n```\n\nLoading webR..."
   },
   {
     "objectID": "posts/first-time-julia/index.html",
@@ -68,12 +82,5 @@
     "title": "How to create a normal distribution plot using Julia and Quarto",
     "section": "",
     "text": "Ok, now that I like my setup more and more, I also want to use Julia to show off.\n\nFirst requirement: r install.packages(\"JuliaCall\") (I had to switch the render engine from knitr to jupyter, and there using the julia-1.8 kernel, because RStudio kept crashing…\n\n1 + 1\n\n2\n\n\nBut it works!!! For today I leave it like that. Tomorrow I will tackle the normal plot.\nAnd here it is:\n\nusing Plots\nusing StatsPlots\nusing Distributions\n\n\nplot(Normal(3, 5), lw = 3)"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "Image above: “A logo for my blog profile.” prompt on stablediffusionweb"
   }
 ]
