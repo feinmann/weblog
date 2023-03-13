@@ -1,0 +1,38 @@
+---
+title: "Using WebR within Quarto"
+author: "matthias berger"
+date: "2023-03-13"
+categories: [howto, R]
+engine: knitr
+filters:
+  - webr
+---
+
+## Brandnew webR setup in Quarto
+
+Through mastodon I found a hint by Bob Rudis towards webR and got hooked. I took only a weekend to setup [Interactive Data Lessons](https://interactive-lessons.weecology.org/) by another mastodon user.
+
+Here I give a short insight how you can setup your own webR instance within Quarto.
+
+First, install the Quarto extension (requires Quarto \>v1.2):
+
+``` {{bash}}
+quarto install extension coatless/quarto-webr
+```
+
+Then add this to your YAML:
+
+``` {{yaml}}
+engine: knitr
+filters:
+  - webr
+```
+
+Now you can insert webR codeblocks by
+
+``` {{webr}}
+```
+
+```{webr}
+
+```

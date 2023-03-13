@@ -1,0 +1,14 @@
+{
+  "hash": "310e7c8daf80f714db48857745d60379",
+  "result": {
+    "markdown": "---\ntitle: \"Using WebR within Quarto\"\nauthor: \"matthias berger\"\ndate: \"2023-03-13\"\ncategories: [howto, R]\nengine: knitr\nfilters:\n  - webr\n---\n\n\n## Brandnew webR setup in Quarto\n\nThrough mastodon I found a hint by Bob Rudis towards webR and got hooked. I took only a weekend to setup [Interactive Data Lessons](https://interactive-lessons.weecology.org/) by another mastodon user.\n\nHere I give a short insight how you can setup your own webR instance within Quarto.\n\nFirst, install the Quarto extension (requires Quarto \\>v1.2):\n\n``` {{bash}}\nquarto install extension coatless/quarto-webr\n```\n\nThen add this to your YAML:\n\n```{{YAML}}\nengine: knitr\nfilters:\n  - webr\n```\n\nNow you can insert webR codeblocks by\n\n```{{webr}}\n\n```\n\n\n::: {.cell}\n\n```{.webr .cell-code}\n\n```\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
