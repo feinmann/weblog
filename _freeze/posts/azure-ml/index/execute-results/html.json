@@ -1,0 +1,14 @@
+{
+  "hash": "91170434f06b6b28c6f74320cd75d0c2",
+  "result": {
+    "markdown": "---\ntitle: \"Notes on MLOps on MS Azure\"\nauthor: \"matthias berger\"\ndate: \"2023-03-15\"\ncategories: [notes, ML]\nengine: knitr\n---\n\n\n## Investigating some architectures for MLOps on MS Azure\n\nI started on YouTube with a video about setup of ML in less than an hour :D I was searching for \"azure mlops setup\" and found as third hit: [Deploy MLOps on Azure in Less Than an Hour (MLOps V2 Accelerator)](https://www.youtube.com/watch?v=5yPDkWCMmtk)\n\nThis links also the repo on GitHub <https://github.com/Azure/mlops-v2>\n\nGreat overview and architecture sketches.\n\nReminded of our requirement to deploy many models, maybe thousands, I search further and found a link to Azure docu: <https://learn.microsoft.com/en-us/azure/architecture/example-scenario/ai/many-models-machine-learning-azure-machine-learning>\n\nAnd exactly below that in the sidebar, I found <https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/ai/mlops-python> which should be very significant.\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
