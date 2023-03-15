@@ -11,7 +11,7 @@
     "href": "index.html",
     "title": "Posts about R, Python, Julia and Quarto",
     "section": "",
-    "text": "Using WebR within Quarto\n\n\n\n\n\n\n\nhowto\n\n\nR\n\n\n\n\n\n\n\n\n\n\n\nMar 13, 2023\n\n\nmatthias berger\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHow to create a normal distribution plot using Python and Quarto\n\n\n\n\n\n\n\nhowto\n\n\npython\n\n\n\n\n\n\n\n\n\n\n\nFeb 10, 2023\n\n\nmatthias berger\n\n\n\n\n\n\n  \n\n\n\n\nHow to create a normal distribution plot using Julia and Quarto\n\n\n\n\n\n\n\nhowto\n\n\njulia\n\n\n\n\n\n\n\n\n\n\n\nFeb 9, 2023\n\n\nmatthias berger\n\n\n\n\n\n\n  \n\n\n\n\nHow to change the HTML theme of your Quarto Blog\n\n\n\n\n\n\n\nhowto\n\n\ncss\n\n\n\n\n\n\n\n\n\n\n\nFeb 1, 2023\n\n\nmatthias berger\n\n\n\n\n\n\n  \n\n\n\n\nHow to setup a Quarto blog with gh-pages\n\n\n\n\n\n\n\nhowto\n\n\nR\n\n\n\n\n\n\n\n\n\n\n\nJan 29, 2023\n\n\nmatthias berger\n\n\n\n\n\n\nNo matching items"
+    "text": "Notes on MLOps on MS Azure\n\n\n\n\n\n\n\nnotes\n\n\nML\n\n\n\n\n\n\n\n\n\n\n\nMar 15, 2023\n\n\nmatthias berger\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUsing WebR within Quarto\n\n\n\n\n\n\n\nhowto\n\n\nR\n\n\n\n\n\n\n\n\n\n\n\nMar 13, 2023\n\n\nmatthias berger\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHow to create a normal distribution plot using Python and Quarto\n\n\n\n\n\n\n\nhowto\n\n\npython\n\n\n\n\n\n\n\n\n\n\n\nFeb 10, 2023\n\n\nmatthias berger\n\n\n\n\n\n\n  \n\n\n\n\nHow to create a normal distribution plot using Julia and Quarto\n\n\n\n\n\n\n\nhowto\n\n\njulia\n\n\n\n\n\n\n\n\n\n\n\nFeb 9, 2023\n\n\nmatthias berger\n\n\n\n\n\n\n  \n\n\n\n\nHow to change the HTML theme of your Quarto Blog\n\n\n\n\n\n\n\nhowto\n\n\ncss\n\n\n\n\n\n\n\n\n\n\n\nFeb 1, 2023\n\n\nmatthias berger\n\n\n\n\n\n\n  \n\n\n\n\nHow to setup a Quarto blog with gh-pages\n\n\n\n\n\n\n\nhowto\n\n\nR\n\n\n\n\n\n\n\n\n\n\n\nJan 29, 2023\n\n\nmatthias berger\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/first-time-python/index.html",
@@ -75,6 +75,13 @@
     "title": "Using WebR within Quarto",
     "section": "",
     "text": "Through mastodon I found a hint by Bob Rudis towards webR and got hooked. I took only a weekend to setup Interactive Data Lessons by another mastodon user.\nHere I give a short insight how you can setup your own webR instance within Quarto.\nFirst, install the Quarto extension (requires Quarto >v1.2):\n```{bash}\nquarto install extension coatless/quarto-webr\n```\nThen add this to your YAML:\n```{yaml}\nengine: knitr\nfilters:\n  - webr\n```\nNow you can insert webR codeblocks by\n```{webr}\n\n```\n\nLoading webR..."
+  },
+  {
+    "objectID": "posts/azure-ml/index.html",
+    "href": "posts/azure-ml/index.html",
+    "title": "Notes on MLOps on MS Azure",
+    "section": "",
+    "text": "I started on YouTube with a video about setup of ML in less than an hour :D I was searching for “azure mlops setup” and found as third hit: Deploy MLOps on Azure in Less Than an Hour (MLOps V2 Accelerator)\nThis links also the repo on GitHub https://github.com/Azure/mlops-v2\nGreat overview and architecture sketches.\nReminded of our requirement to deploy many models, maybe thousands, I search further and found a link to Azure docu: https://learn.microsoft.com/en-us/azure/architecture/example-scenario/ai/many-models-machine-learning-azure-machine-learning\nAnd exactly below that in the sidebar, I found https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/ai/mlops-python which should be very significant."
   },
   {
     "objectID": "posts/first-time-julia/index.html",
